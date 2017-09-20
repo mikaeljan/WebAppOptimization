@@ -7,8 +7,7 @@ const gulp  = require('gulp'),
     del       = require('del'),
     imagemin  = require('gulp-imagemin'),
     csso      = require('gulp-csso'),
-    gzip      = require('gulp-gzip'),
-    // htmlmin   = require('gulp-htmlmin'),
+    // gzip      = require('gulp-gzip'),
     inlineSource = require('gulp-inline-source');
 
 const options = {
@@ -30,7 +29,7 @@ gulp.task('useref',["images"], function(){
         .pipe(gulpIf('*.js', uglify()))
         // Minifies only if it's a CSS file
         .pipe(gulpIf('*.css', csso()))
-        .pipe(gzip())
+        // .pipe(gzip())
         .pipe(gulp.dest(options.dist));
 });
 
